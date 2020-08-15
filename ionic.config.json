@@ -1,0 +1,7 @@
+{
+  "name": "AppARS",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
