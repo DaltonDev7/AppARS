@@ -7,16 +7,16 @@ import { PruebaComponent } from '../components/prueba/prueba.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomePage
+    component: HomePage,
   },
   {
-    path: 'prueba',
-    component: PruebaComponent
-  },
+    path: 'dalton',
+    loadChildren : () => import('../dalton/dalton.module').then( m => m.DaltonPageModule)
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class HomePageRoutingModule {}
+export class HomePageRoutingModule { }

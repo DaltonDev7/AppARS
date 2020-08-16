@@ -12,10 +12,11 @@ const routes: Routes = [
     path: 'signup',
     loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
   },
-  // {
-  //   path: 'home',
-  //   loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  // },
+  {
+    path: 'admin',
+    component: MenuComponent,
+    loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
+  },
   {
     path: '',
     component: MenuComponent,
