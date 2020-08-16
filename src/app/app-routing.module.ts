@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { MenuComponent } from './components/menu/menu.component';
 
 
 const routes: Routes = [
@@ -11,19 +12,19 @@ const routes: Routes = [
     path: 'signup',
     loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
   },
-  {
-    path: 'home',
-    
-  },
+  // {
+  //   path: 'home',
+  //   loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  // },
   {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    component: MenuComponent,
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
     path: '**',
     loadChildren: () => import('./error/error.module').then( m => m.ErrorPageModule)
-  },
+  }
 ];
 
 @NgModule({
